@@ -5,6 +5,7 @@ import polyfills from './utils/polyfills';
 import { getGlobal } from './utils/mixins';
 import PluginManager from './plugin_manager';
 import { EditorConfig } from './editor/config/config';
+import ComponentsView from './dom_components/view/ComponentsView';
 
 interface InitEditorConfig extends EditorConfig {
   grapesjs?: typeof GrapesJS;
@@ -17,6 +18,7 @@ const editors: Editor[] = [];
 
 const GrapesJS = {
   $,
+  ComponentsView,
 
   editors,
 
