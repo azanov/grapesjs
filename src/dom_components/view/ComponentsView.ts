@@ -137,7 +137,7 @@ export default class ComponentsView extends View {
   }
 
   resetChildren(models: Components, { previousModels = [] } = {}) {
-    this.parentEl!.innerHTML = '';
+    // this.parentEl!.innerHTML = '';
     previousModels.forEach(md => this.removeChildren(md, this.collection));
     models.each(model => this.addToCollection(model));
   }
