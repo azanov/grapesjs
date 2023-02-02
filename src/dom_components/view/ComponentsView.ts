@@ -103,31 +103,31 @@ export default class ComponentsView extends View {
       em.logError(error as any);
     }
 
-    if (fragment) {
-      fragment.appendChild(rendered);
-    } else {
-      const parent = this.parentEl!;
-      const children = parent.childNodes;
+    // if (fragment) {
+    //   fragment.appendChild(rendered);
+    // } else {
+    //   const parent = this.parentEl!;
+    //   const children = parent.childNodes;
 
-      if (!isUndefined(index)) {
-        const lastIndex = children.length == index;
+    //   if (!isUndefined(index)) {
+    //     const lastIndex = children.length == index;
 
-        // If the added model is the last of collection
-        // need to change the logic of append
-        if (lastIndex) {
-          index--;
-        }
+    //     // If the added model is the last of collection
+    //     // need to change the logic of append
+    //     if (lastIndex) {
+    //       index--;
+    //     }
 
-        // In case the added is new in the collection index will be -1
-        if (lastIndex || !children.length) {
-          parent.appendChild(rendered);
-        } else {
-          parent.insertBefore(rendered, children[index]);
-        }
-      } else {
-        parent.appendChild(rendered);
-      }
-    }
+    //     // In case the added is new in the collection index will be -1
+    //     if (lastIndex || !children.length) {
+    //       parent.appendChild(rendered);
+    //     } else {
+    //       parent.insertBefore(rendered, children[index]);
+    //     }
+    //   } else {
+    //     parent.appendChild(rendered);
+    //   }
+    // }
 
     if (!model.opt.temporary) {
       em?.trigger('component:mount', model);
