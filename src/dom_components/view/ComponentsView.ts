@@ -143,12 +143,12 @@ export default class ComponentsView extends View {
   }
 
   render(parent?: HTMLElement) {
-    const el = this.el;
-    const frag = document.createDocumentFragment();
-    this.parentEl = parent || this.el;
-    this.collection.each(model => this.addToCollection(model, frag));
-    el.innerHTML = '';
-    el.appendChild(frag);
+    // const el = this.el;
+    // const frag = document.createDocumentFragment();
+    // this.parentEl = parent || this.el;
+    this.collection.each(model => this.addToCollection(model, null));
+    // el.innerHTML = '';
+    // el.appendChild(frag);
     return this;
   }
 }
